@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection){
         return "TIE";
     }else if(checkWinner(playerSelection, computerSelection)){
         return "PLAYER";
-    }else if(checkWinner(computerSelection, playerSelection)){
+    }else{
         return "COMPUTER";
     }
 }
@@ -39,7 +39,7 @@ function game(playerSelection){
     }else if(playRound(playerSelection, getComputerChoice())=="PLAYER"){
         alert("Player Won!");
         playerScore++
-    }else if(playRound(playerSelection, getComputerChoice())=="COMPUTER"){
+    }else{
         alert("Computer Won!");
         computerScore++;
     }
@@ -50,7 +50,13 @@ function game(playerSelection){
 
 while(playerScore < 5 && computerScore < 5){
     let choice = prompt("ROCK | PAPER | SCISSORS").toLowerCase().toUpperCase();
-    game(choice);
+    if(choice != '' || choice != null || choice != undefined){
+        if(choice == "ROCK" || choice == "PAPER" || choice == "SCISSORS"){
+            game(choice);
+        }else{
+            alert("Invalid Input!");
+        }
+    }
 }
 
 function updateScoreMessage(roundWinner, playerScore, computerScore){
