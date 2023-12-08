@@ -6,6 +6,9 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
+button{
+    border: none;
+}
 .center-text{
     text-align: center;
 }
@@ -53,10 +56,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    text-align: center;
 }
 
-.image-selection > img{
+.image-selection > .action-selected{
+    font-size: 80px;
     height: 150px;
     width: 150px;
     border-radius: 20px;
@@ -75,14 +79,16 @@ body{
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+    align-items: center;
 }
 
 .choice{
     height: 100px;
     width: 100px;
+    font-size: 80px;
     transition-duration: 0.5s;
     background-color: bisque;
-    opacity: 0.2;
+    opacity: 0.8;
     box-shadow: 0px 0px 5px 5px #888888;
     border-radius: 20px;
     cursor: pointer;
